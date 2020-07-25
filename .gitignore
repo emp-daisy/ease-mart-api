@@ -1,0 +1,5 @@
+.env
+.deno_plugins
+env
+__pycache__
+.vscode

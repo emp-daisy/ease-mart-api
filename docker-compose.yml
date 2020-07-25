@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+    mongodb:
+        image: mongo:latest
+
+    api:
+        build: .
+        command: python -u app.py
+        ports:
+            - "5051:5051"
+        depends_on:
+            - mongodb
+        volumes:
+            - .:/project
+        links:
+            - mongodb
